@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
           submitButton.style.backgroundColor = "var(--fujitel-blue)";
           submitButton.disabled = false;
         }, 5000);
-
+        window.location.href = "thankyou.html";
         // Em um ambiente real, você redirecionaria para uma "Página de Obrigado" para rastreamento de conversão!
       }, 2000);
     });
