@@ -200,3 +200,33 @@ document.addEventListener("DOMContentLoaded", () => {
   // Inicializa o Matrix na seção Diferenciais (Fundo Escuro = lightMode: false)
   initializeMatrixEffect("matrix-canvas-diferenciais", false);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // ... (Seu código original aqui: Rolagem suave, Formulário, Efeito de Partículas Hero, Matrix)
+
+  // 6. Funcionalidade de Acordeão FAQ
+  const faqQuestions = document.querySelectorAll(".faq-question");
+
+  faqQuestions.forEach((question) => {
+    question.addEventListener("click", () => {
+      const answer = question.nextElementSibling;
+
+      // Verifica se o item clicado já está ativo
+      const isActive = question.classList.contains("active");
+
+      // Fecha todos os itens (opcional, para abrir apenas um por vez)
+      faqQuestions.forEach((q) => {
+        q.classList.remove("active");
+        q.nextElementSibling.style.maxHeight = null;
+        q.nextElementSibling.style.padding = "0 20px"; // Reseta o padding
+      });
+
+      // Se não estava ativo, abre o item clicado
+      if (!isActive) {
+        question.classList.add("active");
+        answer.style.maxHeight = answer.scrollHeight + 30 + "px"; // +30 para compensar o padding
+        answer.style.padding = "0 20px 15px 20px"; // Adiciona padding inferior ao abrir
+      }
+    });
+  });
+});

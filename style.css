@@ -290,6 +290,13 @@ section {
 .solucoes h2 {
   color: var(--fujitel-light);
 }
+.solucao-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  justify-content: space-between;
+  gap: 2rem;
+}
 .solucao-bloco {
   padding: 40px;
   margin: 40px 0;
@@ -316,8 +323,8 @@ section {
 }
 
 .servicos-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
@@ -557,7 +564,114 @@ section {
   margin-top: 10px;
   width: 100%;
 }
+/* --- ESTILIZAÇÃO DA SEÇÃO FAQ --- */
+.faq-section {
+  background-color: #141111; /* Cor de fundo solicitada (preto muito escuro) */
+  padding: 80px 0;
+  text-align: center;
+}
 
+.faq-section h2 {
+  color: var(--fujitel-light); /* Título em branco */
+  margin-bottom: 40px;
+}
+
+/* Container do Acordeão */
+.faq-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background-color: var(
+    --fujitel-dark
+  ); /* Fundo dos itens levemente mais claro que a seção */
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden; /* Importante para o efeito de esconder/mostrar */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
+}
+
+/* Botão de Pergunta */
+.faq-question {
+  width: 100%;
+  background-color: transparent;
+  color: var(--fujitel-light);
+  border: none;
+  padding: 20px;
+  text-align: left;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+  background-color: rgba(
+    0,
+    123,
+    255,
+    0.1
+  ); /* Hover suave com o azul da Fujitel */
+}
+
+.faq-question i.fas {
+  color: var(--fujitel-blue); /* Ícones em azul para destaque */
+  margin-right: 10px;
+}
+
+/* Ícone de Seta */
+.arrow-icon {
+  margin-left: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Estado Ativo: Gira a seta */
+.faq-question.active .arrow-icon {
+  transform: rotate(180deg);
+}
+
+/* Resposta */
+.faq-answer {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.05
+  ); /* Fundo da resposta muito sutil */
+  padding: 0 20px;
+  max-height: 0; /* Inicialmente escondido */
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Transição suave */
+}
+
+.faq-answer p {
+  padding: 15px 0;
+  color: var(--fujitel-gray);
+  line-height: 1.6;
+}
+
+/* Chamada para Ação Final da FAQ */
+.faq-cta-final {
+  margin-top: 40px;
+}
+
+.faq-cta-final p {
+  color: var(--fujitel-light);
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+/* Ajustes de Responsividade */
+@media (max-width: 600px) {
+  .faq-question {
+    font-size: 1em;
+    padding: 15px;
+  }
+}
 /* --- RODAPÉ --- */
 footer {
   background-color: #141111;
@@ -617,14 +731,22 @@ footer .container {
   nav ul {
     justify-content: space-around;
   }
-
+  .solucao-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .servicos-grid {
     justify-content: center;
+
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .solucao-bloco.reverse {
+    padding: 15px 5%;
     flex-direction: column;
   }
+
   footer .container {
     flex-direction: column;
     text-align: center;
