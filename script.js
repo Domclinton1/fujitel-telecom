@@ -11,41 +11,31 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 2. Manipulação do Formulário de Contato (Simulação de Envio)
-  const contactForm = document.getElementById("contact-form");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault(); // Impede o envio padrão do formulário
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
 
-      const submitButton = contactForm.querySelector(".final-submit");
-      const originalText = submitButton.textContent;
+      const nome = document.getElementById("nome").value;
+      const interesse = document.getElementById("interesse-select").value;
+      const endereco = document.getElementById("endereco").value;
 
-      // Simulação de carregamento/processamento
-      submitButton.textContent = "Enviando...";
-      submitButton.disabled = true;
+      let mensagem = `Olá, meu nome é ${nome} e gostaria de fazer um orçamento`;
 
-      // Simulação de envio bem-sucedido após 2 segundos
-      setTimeout(() => {
-        // Aqui, você integraria a lógica real de envio (e.g., fetch API para um backend/CRM)
+      if (interesse) {
+        mensagem += ` de ${interesse}`;
+      }
 
-        // Feedback visual para conversão
-        submitButton.style.backgroundColor = "var(--fujitel-success)";
-        submitButton.textContent = "✅ Consultoria Solicitada!";
+      if (endereco.trim() !== "") {
+        mensagem += `. Meu endereço é: ${endereco}`;
+      }
 
-        // Opcional: Limpar o formulário
-        contactForm.reset();
+      const numero = "5531971198708";
+      const url =
+        "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
 
-        // Resetar o botão após um tempo para permitir novos envios ou recarregar a página
-        setTimeout(() => {
-          submitButton.textContent = originalText;
-          submitButton.style.backgroundColor = "var(--fujitel-blue)";
-          submitButton.disabled = false;
-        }, 5000);
-        window.location.href = "thankyou.html";
-        // Em um ambiente real, você redirecionaria para uma "Página de Obrigado" para rastreamento de conversão!
-      }, 2000);
+      window.open(url, "_blank");
     });
-  }
-
   // 3. Efeito de fixar a navegação (melhoria de UX)
   const header = document.querySelector("header");
   window.addEventListener("scroll", () => {

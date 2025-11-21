@@ -80,12 +80,12 @@
   <body>
     <header>
       <div class="container">
-        <div class="logo">
+        <a href="#" class="logo">
           <img
             src="./assets/icons/logotipo-fujitel.png"
             alt="Logotipo Fujitel Telecomunicações"
           />
-        </div>
+        </a>
         <nav id="nav-menu">
           <ul>
             <li><a href="#solucoes">Soluções</a></li>
@@ -93,7 +93,12 @@
             <li><a href="#contato">Contato</a></li>
           </ul>
         </nav>
-        <a href="#contato" class="btn-cta nav-cta">Fale com um Especialista</a>
+        <a
+          href="https://wa.me/5531971198708?text=Ola%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
+          target="_blank"
+          class="btn-cta nav-cta"
+          >Fale com um Especialista</a
+        >
       </div>
     </header>
 
@@ -445,33 +450,38 @@
             <input
               type="text"
               name="nome"
+              id="nome"
               placeholder="Seu Nome Completo"
               required
             />
+
             <input
-              type="email"
-              name="email"
-              placeholder="Seu Melhor E-mail Corporativo"
-              required
+              type="text"
+              name="endereco"
+              id="endereco"
+              placeholder="Seu Endereço (Opcional)"
             />
-            <input
-              type="tel"
-              name="telefone"
-              placeholder="Telefone (WhatsApp)"
-              required
-            />
-            <select name="interesse">
+
+            <select name="interesse" id="interesse-select">
               <option value="" disabled selected>
                 Principal Interesse (Opcional)
               </option>
-              <option value="voip">VOIP/PABX em Nuvem</option>
-              <option value="omnichannel">Omnichannel (WhatsApp)</option>
-              <option value="ia">Inteligência Artificial</option>
-              <option value="infra">Instalação de Redes/Racks</option>
+              <option value="VOIP/PABX em Nuvem">VOIP/PABX em Nuvem</option>
+              <option value="Omnichannel (WhatsApp)">
+                Omnichannel (WhatsApp)
+              </option>
+              <option value="Inteligência Artificial">
+                Inteligência Artificial
+              </option>
+              <option value="Instalação de Redes/Racks">
+                Instalação de Redes/Racks
+              </option>
             </select>
+
             <button type="submit" class="btn-cta final-submit">
               Receber Consultoria Gratuita
             </button>
+
             <p class="small-print">
               Seus dados estão seguros. Não enviamos spam.
             </p>
@@ -485,9 +495,16 @@
         <p>
           &copy; 2025 Fujitel Telecomunicações. Todos os direitos reservados.
         </p>
+        <p>Tel: (31) 2112-1155</p>
         <div class="social-links">
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/fujiteltelecom/" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://wa.me/5531971198708?text=Ola%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
+            target="_blank"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
         </div>
       </div>
     </footer>
