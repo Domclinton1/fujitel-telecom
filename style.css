@@ -780,9 +780,9 @@ section {
 /* --- RODAPÉ --- */
 footer {
   background-color: #141111;
-  color: var(--fujitel-gray);
+  color: #f8f9fa;
   padding: 20px 0;
-  font-size: 0.9em;
+  font-size: 1.3em;
 }
 
 footer .container {
@@ -792,7 +792,7 @@ footer .container {
 }
 
 .social-links a {
-  color: var(--fujitel-gray);
+  color: #f8f9fa;
   font-size: 1.5em;
   margin-left: 15px;
   transition: color 0.3s;
