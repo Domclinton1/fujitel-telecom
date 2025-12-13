@@ -175,6 +175,7 @@ section {
 .hero .container {
   position: relative;
   z-index: 2; /* Fica acima da animação (z-index: 1) */
+  
 }
 
 /* 4. Ajustes de Cor de Texto (Como o fundo será escuro, o texto deve ser claro) */
@@ -201,13 +202,25 @@ section {
   background-repeat: no-repeat;
   background-position: 50% 80%;*/
 }
-
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+.hero-content .btn-cta {
+  width: fit-content;
+  display: flex;
+  
+}
 .hero .container {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   gap: 40px;
-  max-width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .hero .container img {
   max-width: 350px;
@@ -279,8 +292,13 @@ section {
   flex: 1;
   max-width: 100%;
   padding: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
+.sobre-text p {
+  color: #0d0d0d;
+  font-size: 1.2em;
+}
 .sobre-text h2 {
   font-size: 2em;
   margin-bottom: 20px;
@@ -701,7 +719,7 @@ section {
 .faq-question {
   width: 100%;
   background-color: transparent;
-  color: var(--fujitel-light);
+  color: #f8f9fa;
   border: none;
   padding: 20px;
   text-align: left;
@@ -755,7 +773,7 @@ section {
 
 .faq-answer p {
   padding: 15px 0;
-  color: var(--fujitel-gray);
+  color: #f8f9fa;
   line-height: 1.6;
 }
 
@@ -856,4 +874,42 @@ footer .container {
     flex-direction: column;
     text-align: center;
   }
+  .btn-whatsapp img {
+    max-width: 54px;
+  }
+}
+.btn-whatsapp{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    cursor: pointer;
+}
+.btn-whatsapp img {
+    max-width: 74px;
+    transition: 0.4s;
+    animation: zoomImage 2s infinite;
+}
+.btn-whatsapp img:hover {
+    transform: scale(1.1);
+}
+
+.btn-whatsapp .tooltip-text{
+    visibility: hidden;
+    position: absolute;
+    width: 220px;
+    top: 20px;
+    left: -244px;
+    padding: 6px;
+    border-radius: 8px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s;
+    color: #f8f9fa;
+    background-color: #28a745;
+}
+
+.btn-whatsapp:hover .tooltip-text{
+    visibility: visible;
+    opacity: 1;
 }
