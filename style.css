@@ -54,6 +54,7 @@ h3 {
   background-color: var(--fujitel-blue);
   color: white;
   border: 2px solid var(--fujitel-blue);
+  text-transform: uppercase;
 }
 
 .btn-cta:hover {
@@ -456,7 +457,7 @@ section {
   padding: 10px 15px;
   border-radius: 3px;
   width: 100%;
-  max-width: 250px;
+  max-width: 330px;
   border: 1px solid #ddd;
   font-size: 0.9em;
   font-weight: 500;
@@ -825,8 +826,14 @@ footer .container {
   .hero .container {
     flex-direction: column;
     text-align: center;
+    align-items: center;
+    justify-content: center;
   }
-
+  .hero-content {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
   .hero h1 {
     font-size: 2em;
   }
@@ -864,10 +871,11 @@ footer .container {
     display: flex;
     flex-wrap: wrap;
   }
+  .solucao-bloco 
 
   .solucao-bloco.reverse {
-    padding: 15px 5%;
-    flex-direction: column;
+    padding: 0px 3%;
+    flex-direction:column;
   }
 
   footer .container {
@@ -876,6 +884,7 @@ footer .container {
   }
   .btn-whatsapp img {
     max-width: 54px;
+    width: 54px;
   }
 }
 .btn-whatsapp{
